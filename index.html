@@ -1,61 +1,166 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tulio Dutra - Portfólio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tulio Pereira | Técnico de TI</title>
+    <meta name="description"
+        content="Portfólio técnico: Infraestrutura, Windows/Linux, Redes, GLPI/OCS, Zabbix/Grafana, PowerShell/Bash." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#">Tulio</a>
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="./">
+                <span class="prompt">$</span> whoami
+            </a>
+            <nav class="nav">
+                <a href="#skills">Skills</a>
+                <a href="#projetos">Projetos</a>
+                <!--<a href="#impacto">Impacto</a>-->
+                <a href="#contato">Contato</a>
+            </nav>
+            <!-- Dentro do <header> ... </header>, após a nav -->
+            <div class="theme-toggle" aria-label="Alternar tema">
+                <button id="themeBtn" type="button" class="btn theme">
+                    <span class="icon" aria-hidden="true">🌙</span>
+                    <span class="label">Tema</span>
+                </button>
             </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <h1>Your idea matters</h1>
-            <p>Pulvinar enim ac tortor nulla facilisi tristique facilisi elementum sollicitudin eget lorem.</p>
-            <button>Make a Website</button>
+
         </div>
     </header>
 
-    <section class="featured-services">
-        <h2>Featured Services</h2>
-        <div class="service-grid">
-            <div class="service">
-                <img src="icon1.png" alt="Local Business">
-                <h3>Local Business</h3>
-                <p>Lorem ipsum dolor consectetur adipiscing elit eiusmod.</p>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <pre class="terminal">
+$ whoami
+# Tulio Pereira
+Técnico em Informática
+Porto do Açu, RJ — Brasil
+        </pre>
+                <p class="subtitle">
+                    Windows Server, Linux, Redes, GLPI, Zabbix/Grafana, PowerShell/Bash, Virtualização
+                    (Hyper-V)/Proxmox/VMware.
+                </p>
+                <div class="actions">
+                    <a class="btn" href="#projetos">Ver Projetos</a>
+                    <a class="btn secondary" href="#contato">Contato</a>
+                </div>
             </div>
-            <div class="service">
-                <img src="icon2.png" alt="Online Store">
-                <h3>Online Store</h3>
-                <p>Lorem ipsum dolor consectetur adipiscing elit eiusmod.</p>
-            </div>
-            <div class="service">
-                <img src="icon3.png" alt="Blogging">
-                <h3>Blogging</h3>
-                <p>Lorem ipsum dolor consectetur adipiscing elit eiusmod.</p>
-            </div>
-            <div class="service">
-                <img src="icon4.png" alt="Portfolio">
-                <h3>Portfolio</h3>
-                <p>Lorem ipsum dolor consectetur adipiscing elit eiusmod.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <p>&copy; 2025 Tulio Dutra</p>
+        <section id="skills" class="section">
+            <div class="container">
+                <h2><span class="prompt">$</span> skills</h2>
+                <ul class="chip-list">
+                    <li>Windows Server (AD, GPO)</li>
+                    <li>Linux (Ubuntu)</li>
+                    <li>Redes (TCP/IP, VLAN, Wi‑Fi)</li>
+                    <li>GLPI + GLPI Inventory</li>
+                    <li>Zabbix + Grafana</li>
+                    <li>Virtualização (Hyper‑V) + Proxmox + VMware</li>
+                    <li>PowerShell</li>
+                    <li>Bash</li>
+                    <li>Backup/Restore</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projetos" class="section">
+            <div class="container">
+                <h2><span class="prompt">$</span> ls ./projetos</h2>
+
+                <article class="card">
+                    <h3>Implantação GLPI + GLPI Inventory</h3>
+                    <p>Implantação corporativa com inventário automático, DataInjection para importação de dados, GPO para
+                        agente GLPI em massa nos desktops e Intune para dispositivos móveis.</p>
+                    <ul class="bullets">
+                        <li>Tickets e SLA centralizados</li>
+                        <li>Inventário automatizado</li>
+                        <li>Relatórios operacionais</li>
+                        <li>Base de conhecimento técnica</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Monitoramento Zabbix + Grafana</h3>
+                    <p>Coleta de CPU, RAM, disco e rede com dashboards em Grafana e alertas por Telegram. Em implantação monitoramento de nobreaks e demais ativos de rede.</p>
+                    <ul class="bullets">
+                        <li>Templates otimizados</li>
+                        <li>Dashboards por servidor/serviço</li>
+                        <li>Automação de reports</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Migração e Otimização Windows</h3>
+                    <p>Clonagem de SSDs, correção de VMD/RAID em notebooks, tuning de boot e drivers.</p>
+                    <ul class="bullets">
+                        <li>Tempo de boot reduzido</li>
+                        <li>Estabilidade de drivers</li>
+                        <li>Padronização via GPO</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <!--<section id="impacto" class="section">
+            <div class="container">
+                <h2><span class="prompt">$</span> impacto --metrics</h2>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="kpi">-40%</div>
+                        <div class="kpi-label">Incidentes recorrentes</div>
+                    </div>
+                    <div class="metric">
+                        <div class="kpi">+60%</div>
+                        <div class="kpi-label">Visibilidade de ativos</div>
+                    </div>
+                    <div class="metric">
+                        <div class="kpi">-65%</div>
+                        <div class="kpi-label">Tempo de deploy</div>
+                    </div>
+                    <div class="metric">
+                        <div class="kpi">99.5%</div>
+                        <div class="kpi-label">Sucesso em integrações</div>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+        <section id="contato" class="section">
+            <div class="container">
+                <h2><span class="prompt">$</span> contact --info</h2>
+                <ul class="contact">
+                    <li><strong>Local:</strong> São João da Barra, Rio de Janeiro, Brasil</li>
+                    <li><strong>E‑mail:</strong> tuliodutra27@gmail.com</li>
+                    <li><strong>GitHub:</strong> github.com/tuliodutra27</li>
+                    <li><strong>LinkedIn:</strong> linkedin.com/in/tuliodutra27</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <!--<pre class="terminal small">
+$ cat README
+Este site é estático, compatível com GitHub Pages. Edite o HTML ou crie novas seções conforme necessário.
+      </pre>-->
+            <p>© <span id="year"></span> Tulio Pereira</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
