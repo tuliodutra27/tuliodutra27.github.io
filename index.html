@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Tulio Pereira | Técnico de TI</title>
+    <title>Tulio Pereira | Desenvolvedor</title>
     <meta name="description"
-        content="Portfólio técnico: Infraestrutura, Windows/Linux, Redes, GLPI/OCS, Zabbix/Grafana, PowerShell/Bash." />
+        content="Portfólio de desenvolvimento: Python (Flask, FastAPI), PHP, SQL, automação com PowerShell/Bash e Docker — com base complementar em infraestrutura (Windows/Linux, Redes, GLPI, Zabbix/Grafana)." />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
@@ -23,6 +23,7 @@
             <nav class="nav">
                 <a href="#skills">Skills</a>
                 <a href="#projetos">Projetos</a>
+                <a href="#infra">Infra</a>
                 <!--<a href="#impacto">Impacto</a>-->
                 <a href="#contato">Contato</a>
             </nav>
@@ -43,12 +44,12 @@
                 <pre class="terminal">
 $ whoami
 # Tulio Pereira
-Técnico em Informática
+Desenvolvedor
 Porto do Açu, RJ — Brasil
         </pre>
                 <p class="subtitle">
-                    Windows Server, Linux, Redes, GLPI, Zabbix/Grafana, PowerShell/Bash, Virtualização
-                    (Hyper-V)/Proxmox/VMware.
+                    Python (Flask, FastAPI), PHP, SQL, automação com PowerShell/Bash e Docker.
+                    Base complementar em infraestrutura: Windows Server, Linux, Redes, GLPI, Zabbix/Grafana.
                 </p>
                 <div class="actions">
                     <a class="btn" href="#projetos">Ver Projetos</a>
@@ -59,7 +60,21 @@ Porto do Açu, RJ — Brasil
 
         <section id="skills" class="section">
             <div class="container">
-                <h2><span class="prompt">$</span> skills</h2>
+                <h2><span class="prompt">$</span> skills --dev</h2>
+                <ul class="chip-list">
+                    <li>Python (Flask, FastAPI)</li>
+                    <li>PHP</li>
+                    <li>SQL (MySQL, SQLite)</li>
+                    <li>SQLAlchemy</li>
+                    <li>HTMX + Alpine.js + Tailwind</li>
+                    <li>Docker / Docker Compose</li>
+                    <li>LDAP / Active Directory</li>
+                    <li>PowerShell</li>
+                    <li>Bash</li>
+                    <li>Git</li>
+                </ul>
+
+                <h2 style="margin-top:1.5rem"><span class="prompt">$</span> skills --infra</h2>
                 <ul class="chip-list">
                     <li>Windows Server (AD, GPO)</li>
                     <li>Linux (Ubuntu)</li>
@@ -67,9 +82,6 @@ Porto do Açu, RJ — Brasil
                     <li>GLPI + GLPI Inventory</li>
                     <li>Zabbix + Grafana</li>
                     <li>Virtualização (Hyper‑V) + Proxmox + VMware</li>
-                    <li>PowerShell</li>
-                    <li>Bash</li>
-                    <li>Backup/Restore</li>
                 </ul>
             </div>
         </section>
@@ -77,6 +89,75 @@ Porto do Açu, RJ — Brasil
         <section id="projetos" class="section">
             <div class="container">
                 <h2><span class="prompt">$</span> ls ./projetos</h2>
+
+                <article class="card">
+                    <h3>bus.io — Gestão de assentos de ônibus fretados</h3>
+                    <p>API e interface web para controlar em tempo real a ocupação de ônibus fretados que levam
+                        colaboradores até o Porto do Açu: mapa de assentos interativo, fluxo de hora extra com
+                        confirmação e login via Active Directory.</p>
+                    <ul class="bullets">
+                        <li>FastAPI + SQLAlchemy 2 + MySQL; frontend com HTMX, Alpine.js e Tailwind</li>
+                        <li>Autenticação LDAP com 3 níveis de acesso por grupo do AD</li>
+                        <li>Docker Compose (app + banco), sem credenciais hardcoded</li>
+                    </ul>
+                    <p class="note"><a href="https://github.com/tuliodutra27/bus.io" target="_blank" rel="noopener">→ github.com/tuliodutra27/bus.io</a></p>
+                </article>
+
+                <article class="card">
+                    <h3>uniasselvi-sjb — Gestão de matrículas, leads e mensalidades</h3>
+                    <p>Sistema web em Flask para o polo EAD de Uniasselvi em São João da Barra: identifica alunos novos
+                        comparando CSVs de inscrição por CPF, consolida alunos matriculados e situação de mensalidades
+                        com filtros e dashboards.</p>
+                    <ul class="bullets">
+                        <li>Flask 3.1 + SQLite + pandas, com detecção automática de colunas em múltiplos formatos de CSV</li>
+                        <li>Autenticação com papéis (admin/usuário) e log de auditoria de ações sensíveis</li>
+                        <li>Deploy via Docker Compose</li>
+                    </ul>
+                    <p class="note"><a href="https://github.com/tuliodutra27/uniasselvi-sjb" target="_blank" rel="noopener">→ github.com/tuliodutra27/uniasselvi-sjb</a></p>
+                </article>
+
+                <article class="card">
+                    <h3>Indicadores RH — Comparação automática de efetivo</h3>
+                    <p>Sistema web que compara automaticamente as planilhas semanais de colaboradores, detectando
+                        admissões, desligamentos e mudanças de cargo/departamento/gestor, com exportação de relatório
+                        em Excel.</p>
+                    <ul class="bullets">
+                        <li>Flask + pandas/openpyxl para leitura e comparação de planilhas .xlsx</li>
+                        <li>Autenticação via Active Directory (ldap3) com múltiplos grupos</li>
+                        <li>Dashboard com histórico de comparações e export Excel colorido por tipo de evento</li>
+                    </ul>
+                    <p class="note"><a href="https://github.com/tuliodutra27/Indicadores-RH" target="_blank" rel="noopener">→ github.com/tuliodutra27/Indicadores-RH</a></p>
+                </article>
+
+                <article class="card">
+                    <h3>Plugin Permissões de Pastas — GLPI</h3>
+                    <p>Plugin PHP para GLPI 10 que cruza ACLs NTFS de um file server Windows com a membership do
+                        Active Directory, mostrando a gestores quem tem acesso a quais pastas.</p>
+                    <ul class="bullets">
+                        <li>Coletor PowerShell (Get-Acl, Get-ADGroupMember) integrado via API REST em PHP</li>
+                        <li>Árvore de pastas interativa com classificação automática de permissões</li>
+                        <li>Integração nativa ao sistema de direitos/perfis do GLPI</li>
+                    </ul>
+                    <p class="note"><a href="https://github.com/tuliodutra27/plugin-permissoes" target="_blank" rel="noopener">→ github.com/tuliodutra27/plugin-permissoes</a></p>
+                </article>
+
+                <article class="card">
+                    <h3>Plugin Termos — GLPI</h3>
+                    <p>Plugin PHP para geração automática de termos de responsabilidade em PDF para ativos
+                        cadastrados no GLPI (computadores, monitores, telefones, rádios e periféricos).</p>
+                    <ul class="bullets">
+                        <li>Geração de PDF com TCPDF; cláusulas e cabeçalho configuráveis via CRUD</li>
+                        <li>Campos customizados extraídos via tags no comentário de cada ativo</li>
+                    </ul>
+                    <p class="note"><a href="https://github.com/tuliodutra27/plugin-termos" target="_blank" rel="noopener">→ github.com/tuliodutra27/plugin-termos</a></p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="infra" class="section">
+            <div class="container">
+                <h2><span class="prompt">$</span> ls ./infraestrutura</h2>
 
                 <article class="card">
                     <h3>Implantação GLPI + GLPI Inventory</h3>
